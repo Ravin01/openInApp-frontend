@@ -1,0 +1,16 @@
+.auth-con{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.auth-base{
+    width: 50vw;
+    height: 100vh;
+    background-color: #605bff;
+}
+.auth-main{
+    width: 50vw;
+    height: 100vh;
+}
