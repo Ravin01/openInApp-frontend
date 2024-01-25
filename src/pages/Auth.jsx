@@ -5,16 +5,16 @@ import Login from "../Components/Login"
 
 import '../Styles/Auth.css'
 
-const Auth = () => {
+const Auth = () => { 
   return (
     <div className="auth-con" >
         <div className="auth-base">
         <h2>Base</h2>
         <div className="auth-media">
-            {/* <Link to='' target="_blank" >
-        <i className="fa-brands fa-github"></i> */}
-            {/* </Link>
             <Link to='' target="_blank" >
+        <i className="fa-brands fa-github"></i>
+            </Link>
+            {/* <Link to='' target="_blank" >
             <i className="fa-brands fa-square-twitter"></i>
             </Link>
             <Link to='' target="_blank" >
