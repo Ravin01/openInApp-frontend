@@ -11,12 +11,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/auth/*" element={<Auth />} />
-          <Route path="*" element={<Home />} />
-          {/* <Route
+          {/* <Route path="*" element={<Home />} /> */}
+          <Route
             index
-            path="/"
+            path="*"
             element={<ProtectedPage element={<Home />} />}
-          /> */}
+          />
 
           {/* For unmatched routes - 404 */}
           <Route path="/*" element={<Page404 />} />

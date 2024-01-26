@@ -8,7 +8,7 @@ const Auth = () => {
   return (
     <div className="auth-con">
       <div className="auth-base">
-      <i className="fa-solid fa-circle a-th-base-icon "></i>
+      <i className="fa-solid fa-circle auth-base-icon "></i>
         <h4>Base</h4>
         <div className="auth-media">
           <Link to="/auth/login" target="_blank" className="auth-media-icon">

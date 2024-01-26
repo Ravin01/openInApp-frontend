@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "../Styles/Login.css";
 import { useState } from "react";
+import { users } from "../Utils/auth";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -21,50 +22,57 @@ const Login = () => {
     try {
       setLoading(true);
       e.preventDefault();
-      let backendUrl;
-      const newUser = await fetch(`${backendUrl}/login`, {
-        method: "POST",
-        body: JSON.stringify(input),
-        headers: {
-          "Content-Type": "application/json",
-        },
+      let checkUser = users.find((user) => {
+        return (
+          user.userEmail === input.userEmail && user.password === input.password
+        );
       });
-      const userData = await newUser.json();
-
-      setLoading(false);
-      if (newUser.status === 401) {
-        toast.error("Invalid Password", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
-      } else if (newUser.status === 403) {
-        toast.error("User not yet registered", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
+      
+      if (checkUser) {
+        setTimeout(() => {
+          setLoading(false);
+          sessionStorage.setItem("user", JSON.stringify(checkUser));
+          setInput({
+            userEmail: "",
+            password: "",
+          });
+        }, 2000);
       } else {
-        sessionStorage.setItem("user", JSON.stringify(userData));
+        setTimeout(() => {
+          setLoading(false);
+          toast.error("Invalid username or Password", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        }, 2000);
       }
-      setInput({
-        userEmail: "",
-        password: "",
-      });
     } catch (err) {
       console.log(err);
     }
   };
+
+  const handleClickGoogle = () => {
+    try {
+      console.log(input);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleClickApple = () => {
+    try {
+      console.log(input);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   if (
     sessionStorage.getItem("user") &&
     JSON.parse(sessionStorage.getItem("user"))
@@ -76,8 +84,22 @@ const Login = () => {
       <h2 className="login-heading">Sign In</h2>
       <h6>Sign in to your account</h6>
       <div className="auth-buttons">
-        <button className="auth-external-buttons" >sign in with google</button>
-        <button className="auth-external-buttons" >sign in with apple</button>
+        <button className="auth-external-buttons" onClick={handleClickGoogle}>
+          <img
+            src="https://steelbluemedia.com/wp-content/uploads/2019/06/new-google-favicon-512.png"
+            alt=""
+            className="auth-external-btn-img"
+          />
+          <p>sign in with google</p>
+        </button>
+        <button className="auth-external-buttons" onClick={handleClickApple}>
+          <img
+            src="https://seeklogo.com/images/A/apple-logo-52C416BDDD-seeklogo.com.png"
+            alt=""
+            className="auth-external-btn-img"
+          />
+          <p>sign in with apple</p>
+        </button>
       </div>
       <form action="" onSubmit={handleSubmit} className="form-container">
         <label htmlFor="userEmail">Email address</label>
@@ -102,28 +124,21 @@ const Login = () => {
           value={input.password}
           className="login-input"
         />
-<div>
-
-          <Link
-            to={"/forgotPassword"}
-            className="login-form-link"
-            >
+        <div>
+          <Link to={"/forgotPassword"} className="login-form-link">
             Forgot Password ?
           </Link>
-              </div>
+        </div>
 
-{loading ? 
-<div className="login-loader-con">
-    <div className="login-loader"></div>
-</div>
-    :
-
-        <button type="submit" className="login-button">
-          Sign In
-        </button>
-}
-
-
+        {loading ? (
+          <div className="login-loader-con">
+            <div className="login-loader"></div>
+          </div>
+        ) : (
+          <button type="submit" className="login-button">
+            Sign In
+          </button>
+        )}
       </form>
       <ToastContainer
         position="top-right"

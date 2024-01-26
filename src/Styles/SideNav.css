@@ -43,6 +43,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 30px 0px 0px 0px;
+    cursor: pointer;
 }
 .sideNav-header-icon{
     color: #605bff;

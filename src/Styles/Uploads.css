@@ -5,6 +5,14 @@
     justify-content: center;
     align-items: center;
 }
+.upload-excel-con{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.upload-excel-con::-webkit-scrollbar{
+    display: none;
+}
 .uploads-input{
     width: 40%;
     height: 50%;
@@ -22,7 +30,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     background-color: white;
     flex-direction: column;
 }
@@ -39,12 +46,14 @@
 }
 .upload-file-remove{
     color: red;
-    margin: 20px 0px 0px 0px;
+    margin: 20px 8px 0px 0px;
     text-align: center;
+    cursor: pointer;
 }
 .upload-file-browse{
     color: #605bff;
     margin: 0px 8px;
+    cursor: pointer;
 }
 .upload-excel-img{
     width: 50px;
@@ -69,6 +78,7 @@
     align-items: center;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
 }
 .upload-button p{
     margin: 0px 0px 0px 10px;
@@ -97,3 +107,65 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+.excel-table{
+    width: 100%;
+    height: 100%;
+    /* border-collapse: collapse; */
+    font-size: 12px;
+    margin: 0px 20px;
+}
+.excel-con{
+    background-color: #f8faff;
+    padding: 20px;
+}
+.excel-con h4{
+    margin: 0px 0px 30px 0px;
+}
+.excel-tbody{
+    height: 50vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+.excel-table-row{
+    width: 100%;
+    height: 10vh;
+    margin: 10px 0px;
+    border-radius: 10px;
+    background-color: white;
+    /* border: 1px solid black; */
+}
+th, td{
+    padding: 8px;
+    /* margin: 0px; */
+    text-align: left;
+}
+.excel-selectedTags-item{
+    background-color: #605bff;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin: 0px 4px;
+    color: white;
+
+}
+.excel-selectedTags-td{
+    display: flex;
+    /* border: 1px solid black; */
+    width: 25vw;
+    overflow-x: scroll;
+}
+select{
+    border: 1px solid #e3e3e3;
+}
+select:focus{
+    outline: none;
+    border: 1px solid #e3e3e3;
+}
+.excel-selectedTags-td::-webkit-scrollbar{
+    display: none;
+}
+.excel-selectedTags-cancel-btn{
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
