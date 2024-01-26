@@ -53,3 +53,143 @@
     font-size: 25px;
     color: #242424;
 }
+.sideNav-close-btn{
+    display: none;
+}
+.sideNav-con-open{
+    height: 100vh;
+    width: 18vw;
+    background-color: white;
+}
+
+@media screen and (max-width: 950px) {
+  .sideNav-con{
+    position: absolute;
+    top: 0;
+    left: -30vw;
+    width: 30vw;
+    height: 100vh;
+  }
+  .sideNav-con-open{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30vw;
+    height: 100vh;
+    background-color: white;
+  }
+  .sideNav-close-btn{
+    display: block;
+    position: absolute;
+    top: 8vh;
+    left: 25vw;
+  }
+  .sideNav-header{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .sideNav-con{
+    position: absolute;
+    top: 0;
+    left: -50vw;
+    width: 50vw;
+    height: 100vh;
+  }
+  .sideNav-con-open{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+  }
+  .sideNav-close-btn{
+    display: block;
+    position: absolute;
+    top: 6vh;
+    left: 42vw;
+  }
+  .sideNav-header{
+    width: 70%;
+  }
+  .sideNav-element-img{
+    font-size: 18px;
+  }
+  .sideNav-element{
+    margin: 30px 0px;
+  }
+  .sideNav-element-active{
+    margin: 30px 0px;
+  }
+  .sideNav-element p{
+    font-size: 13px;
+  }
+  .sideNav-element-active p{
+    font-size: 13px;
+  }
+  .sideNav-header{
+    width: 50%;
+  }
+  .sideNav-header-icon{
+    color: #605bff;
+    font-size: 40px;
+}
+.sideNav-header h3{
+    font-size: 20px;
+    color: #242424;
+}
+}
+@media screen and (max-width: 450px) {
+  .sideNav-con{
+    position: absolute;
+    top: 0;
+    left: -70vw;
+    width: 70vw;
+    height: 100vh;
+  }
+  .sideNav-con-open{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    height: 100vh;
+    background-color: white;
+  }
+  .sideNav-close-btn{
+    display: block;
+    position: absolute;
+    top: 5.5vh;
+    left: 60vw;
+    font-size: 13px;
+  }
+  .sideNav-header{
+    width: 70%;
+  }
+  .sideNav-element-img{
+    font-size: 18px;
+  }
+  .sideNav-element{
+    margin: 30px 0px;
+  }
+  .sideNav-element-active{
+    margin: 30px 0px;
+  }
+  .sideNav-element p{
+    font-size: 13px;
+  }
+  .sideNav-element-active p{
+    font-size: 13px;
+  }
+  .sideNav-header{
+    width: 50%;
+  }
+  .sideNav-header-icon{
+    color: #605bff;
+    font-size: 30px;
+}
+.sideNav-header h3{
+    font-size: 16px;
+    color: #242424;
+}
+}

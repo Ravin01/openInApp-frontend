@@ -136,7 +136,7 @@
     .form-link{
       font-size: 12px;
       justify-content: space-between;
-      width: 75%;
+      width: 90%;
     }
   
   }
@@ -144,22 +144,41 @@
     .login-container{
         width: 50%;
     }
+    .form-link{
+        width: 90%;
+    }
   }
 @media screen and (max-width : 650px) {
     .login-container{
-        width: 60%;
+        width: 70%;
     }
     .login-heading{
         font-size: 24px;
     }
+    .form-container label{
+        font-size: 12px;
+    }
+    .form-link{
+        font-size: 11px;
+    }
   }
 @media screen and (max-width : 450px) {
     .login-container{
-        width: 75%;
-        height: 55%;
+        width: 90%;
+        height: 80%;
     }
     .login-heading{
         font-size: 16px;
+    }
+    .login-heading h6{
+        font-size: 12px;
+    }
+    .auth-external-buttons{
+        font-size: 9px;
+    }
+    .auth-external-btn-img{
+        width: 12px;
+        height: 12px;
     }
     .login-input{
         height: 30px;
@@ -170,5 +189,9 @@
     .login-button{
         font-size: 12px;
 
+    }
+    .form-link{
+        width: 80%;
+        margin: 0px 20px;
     }
   }

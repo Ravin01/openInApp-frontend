@@ -14,20 +14,25 @@ import { useState } from "react"
 
 const Home = () => {
   const [name, setName] = useState('Dashboard')
+  const [sideNavClass, setSideNavClass] = useState('sideNav-con')
+  const [bars, setBars] = useState('bars')
+
   return (
     <div className="home-container" >
-      <SideNav setName={setName} />
+      <div className={`${sideNavClass}`} >
+      <SideNav setName={setName} sideNavClass={sideNavClass}  setSideNavClass={setSideNavClass} />
+      </div>
       <div className="home-main">
-        <TopNav name={name} />
+        <TopNav name={name} bars={bars} setSideNavClass={setSideNavClass} setBars={setBars} />
         <div className="home-content">
           <Routes>
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route index path="uploads" element={<Uploads />} />
-            <Route path="invoice" element={<Invoice />} />
-            <Route path="schedule" element={<Schedule />} />
-            <Route path="calender" element={<Calender />} />
-            <Route path="notifications" element={<Notifications />} />
-            <Route path="settings" element={<Settings />} />
+            <Route path="dashboard" element={<Dashboard name={name} />} />
+            <Route index path="uploads" element={<Uploads name={name} />} />
+            <Route path="invoice" element={<Invoice name={name} />} />
+            <Route path="schedule" element={<Schedule name={name} />} />
+            <Route path="calender" element={<Calender name={name} />} />
+            <Route path="notifications" element={<Notifications name={name} />} />
+            <Route path="settings" element={<Settings name={name} />} />
           </Routes>
         </div>
       </div>

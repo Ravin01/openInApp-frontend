@@ -3,18 +3,22 @@ import { Link } from 'react-router-dom'
 import '../Styles/SideNav.css'
 import { useState } from 'react';
 
-const SideNav = ({setName}) => {
+const SideNav = ({setName, sideNavClass, setSideNavClass}) => {
   const [activeLink, setActiveLink] = useState('Dashboard');
   const handleSetName = (n)=>{
     setName(n)
     setActiveLink(n);
   }
+  const handleCloseNav = ()=>{
+    setSideNavClass('sideNav-con')
+  }
 
   return (
-    <div className="sideNav-con" >
+    <div className={`${sideNavClass}`}  >
       <div className="sideNav-header">
       <i className="fa-solid fa-circle sideNav-header-icon"></i>
         <h3>Base</h3>
+        <i className={`fa-solid fa-x sideNav-close-btn`} onClick={handleCloseNav} ></i>
       </div>
       <div className="sideNav-elements">
         <Link className={`sideNav-element${activeLink === 'Dashboard' ? '-active' : ''}`} to='dashboard' onClick={()=> handleSetName('Dashboard')} >

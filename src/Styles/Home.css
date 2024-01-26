@@ -10,3 +10,12 @@
     width: 82vw;
     height: 85vh;
 }
+@media screen and (max-width: 950px) {
+    .home-content{
+        width: 100vw;
+        height: 90vh;
+    }
+    
+}
+
+

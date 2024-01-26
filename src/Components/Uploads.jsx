@@ -1,19 +1,26 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import "../Styles/Uploads.css";
 import { readExcel } from "../Utils/readExcel";
 import { Link } from "react-router-dom";
 
-const Uploads = () => {
+const Uploads = ({name}) => {
   const [uploadedFile, setUploadedFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [isUploaded, setIsUploaded] = useState(false);
 
   const handleFileUpload = () => {
-    setIsUploading(true);
-    setTimeout(() => {
-      setIsUploading(false);
-      setIsUploaded(true);
-    }, 2000);
+    if(uploadedFile){
+
+      setIsUploading(true);
+        setTimeout(() => {
+          setIsUploading(false);
+          setIsUploaded(true);
+        }, 5000);
+      
+    }else{
+      alert('please select file')
+    }
     
   };
 
@@ -26,6 +33,10 @@ const Uploads = () => {
     setUploadedFile(null)
     setIsUploading(false)
     setIsUploaded(false)
+    setTimeout(() => {
+      setIsUploading(false);
+      setIsUploaded(false);
+    }, 5000);
   };
   const fileInputRef = useRef(null);
 
@@ -96,6 +107,9 @@ const Uploads = () => {
   return (
     <>
       <div className="upload-excel-con">
+        <h4 className="upload-name">
+          {name}
+        </h4>
         <div className="uploads-con">
           <div className="uploads-con2">
             <div
@@ -108,11 +122,14 @@ const Uploads = () => {
                 className="upload-excel-img"
                 alt="microsoft"
               />
-              {
-                uploadedFile && <p>{uploadedFile.name}</p>
-              }
+              
               <div className="upload-span-div">
+              {
+                uploadedFile === null ? 
                 <span>Drop your file or</span>
+                :
+                <span>{uploadedFile.name}</span>
+              }
                 { !isUploading && <span
                   className="upload-file-browse"
                   onClick={handleBrowseClick}
@@ -133,6 +150,7 @@ const Uploads = () => {
                 onChange={handleFileChange}
                 style={{ display: "none" }}
                 ref={fileInputRef}
+                required
               />
             </div>
 
@@ -187,6 +205,7 @@ const Uploads = () => {
                           onChange={(e) =>
                             handleTagChange(rowIndex, e.target.value)
                           }
+                          className="excel-table-select"
                         >
                           <option value="">Select Tags</option>
                           {row[3].split(",").map((option, i) => (

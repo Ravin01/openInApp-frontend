@@ -53,3 +53,51 @@
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 950px)  {
+    .auth-con{
+        display: block;
+    }
+    .auth-base{
+        height: 10vh;
+        width: 100vw;
+        clip-path: none;
+        justify-content: flex-start;
+        padding: 0px 40px;
+    }
+    .auth-base h4{
+        font-size: 30px;
+        margin: 0px 0px 0px 30px;
+    }
+    .auth-base-icon{
+        position: static;
+        font-size: 40px;
+    }
+    .auth-media{
+        position: absolute;
+        width: 100vw;
+        height: 10vh;
+        bottom: 10px;
+        left: 0;
+    }
+    .auth-media-icon{
+        color: #8d8d8d;
+        font-size: 25px;
+    }
+    .auth-main{
+        width: 100vw;
+        height: 80vh;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .auth-base{
+        padding: 0px 20px;
+    }
+    .auth-base h4{
+        margin: 0px 0px 0px 15px;
+    }
+    .auth-media-icon{
+        font-size: 20px;
+    }
+}

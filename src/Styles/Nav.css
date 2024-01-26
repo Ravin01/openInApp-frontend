@@ -22,3 +22,117 @@
     width: 50px;
     border-radius: 50%;
 }
+.nav-header{
+    display: none;
+}
+.nav-bars{
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .nav-con{
+        width: 100vw;
+        height: 10vh;
+    }
+    .nav-name{
+        display: none;
+    }
+    .nav-header{
+        display: flex;
+        width: 25%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0px 0px 0px 0px;
+        cursor: pointer;
+    }
+    .nav-header-icon{
+        color: #605bff;
+        font-size: 30px;
+    }
+    .nav-header h3{
+        font-size: 25px;
+        color: #242424;
+    }
+    .nav-bars{
+        display: block;
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .nav-con{
+        width: 100vw;
+        height: 10vh;
+    }
+    .nav-name{
+        display: none;
+    }
+    .nav-header{
+        display: flex;
+        width: 25%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0px 0px 0px 0px;
+        cursor: pointer;
+    }
+    .nav-header-icon{
+        color: #605bff;
+        font-size: 25px;
+    }
+    .nav-header h3{
+        font-size: 20px;
+        color: #242424;
+    }
+    .nav-bars{
+        display: block;
+        font-size: 20px;
+    }
+    .nav-profile{
+        width: 15%;
+    }
+    .nav-profile-icon{
+        font-size: 18px;
+    }
+    .nav-profile-img{
+        height: 35px;
+        width: 35px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .nav-con{
+        width: 100vw;
+        height: 10vh;
+    }
+    .nav-name{
+        display: none;
+    }
+    .nav-header{
+        display: flex;
+        width: 35%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0px 0px 0px 0px;
+        cursor: pointer;
+    }
+    .nav-header-icon{
+        color: #605bff;
+        font-size: 18px;
+    }
+    .nav-header h3{
+        font-size: 18px;
+        color: #242424;
+    }
+    .nav-bars{
+        display: block;
+        font-size: 18px;
+    }
+    .nav-profile{
+        width: 20%;
+    }
+    .nav-profile-icon{
+        font-size: 18px;
+    }
+    .nav-profile-img{
+        height: 35px;
+        width: 35px;
+    }
+}

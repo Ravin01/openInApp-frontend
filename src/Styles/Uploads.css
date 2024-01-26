@@ -46,7 +46,7 @@
 }
 .upload-file-remove{
     color: red;
-    margin: 20px 8px 0px 0px;
+    margin: 0px 8px;
     text-align: center;
     cursor: pointer;
 }
@@ -168,4 +168,80 @@ select:focus{
     background-color: transparent;
     color: white;
     cursor: pointer;
+}
+
+.upload-name{
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .upload-name{
+        display: block;
+        margin: 20px 0px 0px 20px;
+    }
+    .uploads-con2{
+        width: 55vw;
+        height: 55vh;
+    }
+    .excel-con h4{
+        margin: 0px 0px 20px 0px;
+        font-size: 13px;
+    }
+    .excel-table{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .upload-name{
+        display: block;
+        margin: 20px 0px 0px 20px;
+    }
+    .uploads-con2{
+        width: 60vw;
+        height: 50vh;
+    }
+    .upload-button{
+        font-size: 12px;
+    }
+    .upload-div{
+        font-size: 12px;
+        width: 100%;
+    }
+    .excel-table{
+        font-size: 10px;
+        margin: 0px 10px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .excel-excel-con{
+        width: 100vw;
+    }
+    .upload-name{
+        display: block;
+        margin: 10px 0px 0px 20px;
+        font-size: 12px;
+    }
+    .uploads-con2{
+        width: 70vw;
+        height: 45vh;
+    }
+    .upload-button{
+        font-size: 10px;
+    }
+    .upload-div{
+        font-size: 8px;
+        width: 100%;
+    }
+    .excel-table{
+        width: 50vw;
+        overflow-y: scroll;
+        margin: 0px 5px;
+    }
+    .excel-table-select{
+        font-size: 8px;
+    }
+    th,td{
+        padding: 4px;
+        font-size: 8px;
+    }
 }
